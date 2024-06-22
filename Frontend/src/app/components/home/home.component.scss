@@ -1,0 +1,44 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-header {
+  background-color: #3f51b5;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+
+  h1 {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.email-logout {
+
+  text-align-last: right;
+  text-wrap: nowrap;
+
+  p {
+    margin: 0;
+  }
+}
+
+.actions-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.justify-right {
+  justify-content: right;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}

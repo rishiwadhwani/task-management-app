@@ -1,0 +1,40 @@
+/* Add your component-specific styles here */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  align-self: flex-start;
+}
+
+.task-form-container {
+  padding: 1rem;
+}
+
+.mat-dialog-container {
+  width: 50vw;
+  height: 50vh;
+}
+
+.dialog-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.character-count-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -1rem; // Adjust the margin to position it correctly
+  margin-bottom: 1rem; // Add margin to separate it from the next form field
+}
+
+.character-count {
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.mb-1-5 {
+  margin-bottom: 1.5rem;
+}

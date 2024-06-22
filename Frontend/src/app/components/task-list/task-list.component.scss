@@ -1,0 +1,21 @@
+.task-list-container {
+  border: 1px solid #ccc;
+  // border-radius: 5px;
+  margin: 15px;
+  margin-top: 20px;
+}
+
+.task-list-table {
+
+  .mat-mdc-row {
+    height: auto !important;
+  }
+
+  .mat-mdc-cell {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    max-width: 20rem;
+    text-overflow: ellipsis;
+  }
+
+}

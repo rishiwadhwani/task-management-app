@@ -1,0 +1,58 @@
+<div class="task-list-container" *ngIf="tasks.length > 0">
+  <table
+    mat-table
+    [dataSource]="filteredTasks"
+    class="task-list-table mat-elevation-z8"
+  >
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let task">{{ task.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let task">{{ task.description }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let task">
+        <mat-form-field appearance="fill" subscriptSizing="dynamic">
+          <mat-select
+            [(ngModel)]="task.status"
+            (selectionChange)="changeStatus(task, $event.value)"
+            [disabled]="authService.getUserType() !== 'admin'"
+          >
+            <mat-option value="To Do">To Do</mat-option>
+            <mat-option value="In Progress">In Progress</mat-option>
+            <mat-option value="Done">Done</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let task">
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="openDeleteDialog(task)"
+          [disabled]="authService.getUserType() !== 'admin'"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+
+<div *ngIf="tasks.length === 0">
+  <h5>
+    There are no tasks available. Please add a task using the
+    <strong>Add Task</strong> button.
+  </h5>
+</div>
